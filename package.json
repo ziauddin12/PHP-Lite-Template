@@ -1,0 +1,14 @@
+{
+  "name": "scaffold-php-lite",
+  "version": "1.0.0",
+  "description": "Tailwind CSS build system for PHP Lite Template",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./public/assets/css/style.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./public/assets/css/style.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0"
+  }
+}

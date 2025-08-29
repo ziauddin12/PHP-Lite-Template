@@ -1,0 +1,21 @@
+{
+  "name": "dyad/scaffold-php-lite",
+  "description": "Modern PHP Landing Pages Template - Lite Version with Intelligent Component Loading",
+  "type": "project",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "php create_required_sections.php",
+    "dev": "php -S localhost:8000 -t public/"
+  },
+  "require": {
+    "php": ">=8.0",
+    "vlucas/phpdotenv": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DyadLite\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
