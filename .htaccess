@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Basis-Routen
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^index/?$ public/index.php [L]
+
+# Assets
+RewriteRule ^assets/(.*)$ public/assets/$1 [L]
