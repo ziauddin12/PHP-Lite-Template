@@ -44,7 +44,20 @@ try {
 
 // Global configuration
 define('SITE_NAME', 'Dyad Lite Template');
-define('SITE_URL', 'http://localhost:8000');
+// Detect protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' 
+             || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+// Detect host (localhost, domain, etc.)
+$host = $_SERVER['HTTP_HOST'];
+
+// Get project root path dynamically
+$scriptName = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+$rootPath = rtrim($scriptName, '/');
+
+// Define SITE_URL
+define('SITE_URL', $protocol . $host . $rootPath . '/');
+
 define('ASSETS_URL', SITE_URL . '/assets');
 define('COMPONENTS_PATH', __DIR__ . '/../components');
 define('PAGES_PATH', __DIR__ . '/../pages');
