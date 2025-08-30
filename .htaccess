@@ -6,3 +6,13 @@ RewriteRule ^index/?$ public/index.php [L]
 
 # Assets
 RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+# Allow direct access to existing files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route all .php requests to public/
+RewriteRule ^(.*\.php)$ public/$1 [L]
+
+# Optional: clean URL routing (for frameworks like CodeIgniter)
+RewriteRule ^(.*)$ public/index.php [L]
